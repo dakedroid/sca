@@ -23,8 +23,8 @@ const firebaseConfig = {
     projectId: "tuxtepec-8dd4d",
     storageBucket: "tuxtepec-8dd4d.appspot.com",
     messagingSenderId: "1066991036306",
-    appId: "1:1066991036306:web:a2cd985b6d039f8234c34b",
-    measurementId: "G-GZBJ0EY0HX"
+    appId: "1:1066991036306:web:641cbe0fc7c0eb6434c34b",
+    measurementId: "G-B5PJYN6FLX"
 };
 
 
@@ -63,7 +63,6 @@ type EstacionTrabajo = {
         color: string;
         conexion: string;
         foto: string;
-
     },
     mouse: {
         codigoInventario: string;
@@ -81,7 +80,47 @@ type EstacionTrabajo = {
         conexion: string;
         foto: string;
     },
+    impresora: {
+        codigoInventario: string;
+        marca: string;
+        modelo: string;
+        color: string;
+        conexion: string;
+        foto: string;
+    },
     cpu: {
+        codigoInventario: string;
+        marca: string;
+        modelo: string;
+        color: string;
+        conexion: string;
+        foto: string;
+    },
+    regulador: {
+        codigoInventario: string;
+        marca: string;
+        modelo: string;
+        color: string;
+        conexion: string;
+        foto: string;
+    },
+    nobreacks: {
+        codigoInventario: string;
+        marca: string;
+        modelo: string;
+        color: string;
+        conexion: string;
+        foto: string;
+    },
+    tplink: {
+        codigoInventario: string;
+        marca: string;
+        modelo: string;
+        color: string;
+        conexion: string;
+        foto: string;
+    },
+    switch: {
         codigoInventario: string;
         marca: string;
         modelo: string;
@@ -253,7 +292,7 @@ const productSchema = buildSchema<Articulo>({
 });
 
 const estacionTrabajoSchema = buildSchema<EstacionTrabajo>({
-    name: "Articulos",
+    name: "Estacion de Trabajo",
     properties: {
 
         codigo: {
@@ -367,7 +406,7 @@ const estacionTrabajoSchema = buildSchema<EstacionTrabajo>({
 
 
         monitor: {
-            title: "Equipo de Computo",
+            title: "Monitor",
             description: "This is an example of a map property",
             dataType: "map",
             properties: {
@@ -406,7 +445,202 @@ const estacionTrabajoSchema = buildSchema<EstacionTrabajo>({
         },
 
         cpu: {
-            title: "Equipo de Computo",
+            title: "Cpu",
+            description: "This is an example of a map property",
+            dataType: "map",
+            properties: {
+                codigoInventario: {
+                    title: "Codigo Inventario",
+                    dataType: "string"
+                },
+                marca: {
+                    title: "Marca",
+                    dataType: "string"
+                },
+                modelo: {
+                    title: "Modelo",
+                    dataType: "string"
+                },
+                color: {
+                    title: "Color",
+                    dataType: "string"
+                },
+                conexion: {
+                    title: "Conexion",
+                    dataType: "string"
+                },
+                foto: buildProperty({ // The `buildProperty` method is an utility function used for type checking
+                    title: "Foto",
+                    dataType: "string",
+                    config: {
+                        storageMeta: {
+                            mediaType: "image",
+                            storagePath: "images",
+                            acceptedFiles: ["image/*"]
+                        }
+                    }
+                }),
+            }
+        },
+
+        impresora: {
+            title: "impresora",
+            description: "This is an example of a map property",
+            dataType: "map",
+            properties: {
+                codigoInventario: {
+                    title: "Codigo Inventario",
+                    dataType: "string"
+                },
+                marca: {
+                    title: "Marca",
+                    dataType: "string"
+                },
+                modelo: {
+                    title: "Modelo",
+                    dataType: "string"
+                },
+                color: {
+                    title: "Color",
+                    dataType: "string"
+                },
+                conexion: {
+                    title: "Conexion",
+                    dataType: "string"
+                },
+                foto: buildProperty({ // The `buildProperty` method is an utility function used for type checking
+                    title: "Foto",
+                    dataType: "string",
+                    config: {
+                        storageMeta: {
+                            mediaType: "image",
+                            storagePath: "images",
+                            acceptedFiles: ["image/*"]
+                        }
+                    }
+                }),
+            }
+        },
+
+        regulador: {
+            title: "regulador",
+            description: "This is an example of a map property",
+            dataType: "map",
+            properties: {
+                codigoInventario: {
+                    title: "Codigo Inventario",
+                    dataType: "string"
+                },
+                marca: {
+                    title: "Marca",
+                    dataType: "string"
+                },
+                modelo: {
+                    title: "Modelo",
+                    dataType: "string"
+                },
+                color: {
+                    title: "Color",
+                    dataType: "string"
+                },
+                conexion: {
+                    title: "Conexion",
+                    dataType: "string"
+                },
+                foto: buildProperty({ // The `buildProperty` method is an utility function used for type checking
+                    title: "Foto",
+                    dataType: "string",
+                    config: {
+                        storageMeta: {
+                            mediaType: "image",
+                            storagePath: "images",
+                            acceptedFiles: ["image/*"]
+                        }
+                    }
+                }),
+            }
+        },
+
+        nobreacks: {
+            title: "nobreack",
+            description: "This is an example of a map property",
+            dataType: "map",
+            properties: {
+                codigoInventario: {
+                    title: "Codigo Inventario",
+                    dataType: "string"
+                },
+                marca: {
+                    title: "Marca",
+                    dataType: "string"
+                },
+                modelo: {
+                    title: "Modelo",
+                    dataType: "string"
+                },
+                color: {
+                    title: "Color",
+                    dataType: "string"
+                },
+                conexion: {
+                    title: "Conexion",
+                    dataType: "string"
+                },
+                foto: buildProperty({ // The `buildProperty` method is an utility function used for type checking
+                    title: "Foto",
+                    dataType: "string",
+                    config: {
+                        storageMeta: {
+                            mediaType: "image",
+                            storagePath: "images",
+                            acceptedFiles: ["image/*"]
+                        }
+                    }
+                }),
+            }
+        },
+
+        tplink: {
+            title: "tplink",
+            description: "This is an example of a map property",
+            dataType: "map",
+            properties: {
+                codigoInventario: {
+                    title: "Codigo Inventario",
+                    dataType: "string"
+                },
+                marca: {
+                    title: "Marca",
+                    dataType: "string"
+                },
+                modelo: {
+                    title: "Modelo",
+                    dataType: "string"
+                },
+                color: {
+                    title: "Color",
+                    dataType: "string"
+                },
+                conexion: {
+                    title: "Conexion",
+                    dataType: "string"
+                },
+                foto: buildProperty({ // The `buildProperty` method is an utility function used for type checking
+                    title: "Foto",
+                    dataType: "string",
+                    config: {
+                        storageMeta: {
+                            mediaType: "image",
+                            storagePath: "images",
+                            acceptedFiles: ["image/*"]
+                        }
+                    }
+                }),
+            }
+        },
+
+        switch: {
+            title: "switch",
             description: "This is an example of a map property",
             dataType: "map",
             properties: {
@@ -446,13 +680,12 @@ const estacionTrabajoSchema = buildSchema<EstacionTrabajo>({
 
         creacion: {
             title: "Creacion",
-            dataType: "timestamp",
-            autoValue: "on_create"
-
+            dataType: "timestamp"
         }
 
     }
 });
+
 
 const articulosCollection = buildCollection<Articulo>({
     path: "articulos",
@@ -485,7 +718,7 @@ const estacionesTrabajosCollection = buildCollection<EstacionTrabajo>({
     permissions: ({user, authController}) => ({
         edit: true,
         create: true,
-        delete: false
+        delete: true
     }),
     excludedProperties: ["related_products"]
 });
