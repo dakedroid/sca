@@ -23,14 +23,15 @@ const firebaseConfig = {
     projectId: "tuxtepec-8dd4d",
     storageBucket: "tuxtepec-8dd4d.appspot.com",
     messagingSenderId: "1066991036306",
-    appId: "1:1066991036306:web:641cbe0fc7c0eb6434c34b",
-    measurementId: "G-B5PJYN6FLX"
+    appId: "1:1066991036306:web:a2cd985b6d039f8234c34b",
+    measurementId: "G-GZBJ0EY0HX"
 };
 
 
 type Articulo = {
     codigo: string;
     categoria: string;
+    numserie: number;
     descripcion: string;
     modelo: string;
     marca: string;
@@ -44,6 +45,49 @@ type Articulo = {
     equipoComputo: {
         so: string;
         ram: number;
+    },
+    creacion: Date
+}
+
+
+type EstacionTrabajo = {
+    codigo: string;
+    descripcion: string;
+    responsable: string;
+    responsableNumEmpleado: string;
+    tipoEstacion: string;
+    teclado: {
+        codigoInventario: string;
+        marca: string;
+        modelo: string;
+        color: string;
+        conexion: string;
+        foto: string;
+        
+    },
+    mouse: {
+        codigoInventario: string;
+        marca: string;
+        modelo: string;
+        color: string;
+        conexion: string;
+        foto: string;
+    },
+    monitor: {
+        codigoInventario: string;
+        marca: string;
+        modelo: string;
+        color: string;
+        conexion: string;
+        foto: string;
+    },
+    cpu: {
+        codigoInventario: string;
+        marca: string;
+        modelo: string;
+        color: string;
+        conexion: string;
+        foto: string;
     },
     creacion: Date
 }
@@ -85,6 +129,19 @@ const productSchema = buildSchema<Articulo>({
             validation: {required: true},
             dataType: "string"
         },
+
+        numserie: {
+            title: "Num Serie",
+            validation: {
+                required: true,
+                requiredMessage: "You must set a price between 0 and 1000",
+                min: 0,
+                max: 100000
+            },
+            description: "Price with range validation",
+            dataType: "number"
+        },
+
 
         marca: {
             title: "Marca",
@@ -196,6 +253,248 @@ const productSchema = buildSchema<Articulo>({
     }
 });
 
+const estacionTrabajoSchema = buildSchema<EstacionTrabajo>({
+    name: "Articulos",
+    properties: {
+    
+        codigo: {
+            title: "Codigo",
+            validation: {required: true},
+            dataType: "string"
+        },
+
+        descripcion: {
+            title: "Descripcion",
+            validation: {required: true},
+            dataType: "string"
+        },
+
+        responsable: {
+            title: "Responsable",
+            validation: {required: true},
+            dataType: "string"
+        },
+
+        responsableNumEmpleado: {
+            title: "Num Empleado Responsable",
+            validation: {required: true},
+            dataType: "string"
+        },
+
+        tipoEstacion: {
+            title: "TipoEstacion",
+            validation: {required: true},
+            dataType: "string"
+        },
+
+        teclado: {
+            title: "Teclado",
+            description: "This is an example of a map property",
+            dataType: "map",
+            properties: {
+                codigoInventario: {
+                    title: "Codigo Inventario",
+                    dataType: "string"
+                },
+                marca: {
+                    title: "Marca",
+                    dataType: "string"
+                },
+                modelo: {
+                    title: "Modelo",
+                    dataType: "string"
+                },
+                color: {
+                    title: "Color",
+                    dataType: "string"
+                },
+                conexion: {
+                    title: "Conexion",
+                    dataType: "string"
+                },
+                foto: buildProperty({ // The `buildProperty` method is an utility function used for type checking
+                    title: "Foto",
+                    dataType: "string",
+                    config: {
+                        storageMeta: {
+                            mediaType: "image",
+                            storagePath: "images",
+                            acceptedFiles: ["image/*"]
+                        }
+                    }
+                }),
+            }
+        },
+
+
+
+        mouse: {
+            title: "Mouse",
+            description: "This is an example of a map property",
+            dataType: "map",
+            properties: {
+                codigoInventario: {
+                    title: "Codigo Inventario",
+                    dataType: "string"
+                },
+                marca: {
+                    title: "Marca",
+                    dataType: "string"
+                },
+                modelo: {
+                    title: "Modelo",
+                    dataType: "string"
+                },
+                color: {
+                    title: "Color",
+                    dataType: "string"
+                },
+                conexion: {
+                    title: "Conexion",
+                    dataType: "string"
+                },
+                foto: buildProperty({ // The `buildProperty` method is an utility function used for type checking
+                    title: "Foto",
+                    dataType: "string",
+                    config: {
+                        storageMeta: {
+                            mediaType: "image",
+                            storagePath: "images",
+                            acceptedFiles: ["image/*"]
+                        }
+                    }
+                }),
+            }
+        },
+
+
+        monitor: {
+            title: "Equipo de Computo",
+            description: "This is an example of a map property",
+            dataType: "map",
+            properties: {
+                codigoInventario: {
+                    title: "Codigo Inventario",
+                    dataType: "string"
+                },
+                marca: {
+                    title: "Marca",
+                    dataType: "string"
+                },
+                modelo: {
+                    title: "Modelo",
+                    dataType: "string"
+                },
+                color: {
+                    title: "Color",
+                    dataType: "string"
+                },
+                conexion: {
+                    title: "Conexion",
+                    dataType: "string"
+                },
+                foto: buildProperty({ // The `buildProperty` method is an utility function used for type checking
+                    title: "Foto",
+                    dataType: "string",
+                    config: {
+                        storageMeta: {
+                            mediaType: "image",
+                            storagePath: "images",
+                            acceptedFiles: ["image/*"]
+                        }
+                    }
+                }),
+            }
+        },
+
+        cpu: {
+            title: "Equipo de Computo",
+            description: "This is an example of a map property",
+            dataType: "map",
+            properties: {
+                codigoInventario: {
+                    title: "Codigo Inventario",
+                    dataType: "string"
+                },
+                marca: {
+                    title: "Marca",
+                    dataType: "string"
+                },
+                modelo: {
+                    title: "Modelo",
+                    dataType: "string"
+                },
+                color: {
+                    title: "Color",
+                    dataType: "string"
+                },
+                conexion: {
+                    title: "Conexion",
+                    dataType: "string"
+                },
+                foto: buildProperty({ // The `buildProperty` method is an utility function used for type checking
+                    title: "Foto",
+                    dataType: "string",
+                    config: {
+                        storageMeta: {
+                            mediaType: "image",
+                            storagePath: "images",
+                            acceptedFiles: ["image/*"]
+                        }
+                    }
+                }),
+            }
+        },
+
+
+
+
+        creacion: {
+            title: "Creacion",
+            dataType: "timestamp"
+        }
+        
+    }
+});
+
+
+const articulosCollection = buildCollection<Articulo>({
+    path: "articulos",
+    schema: productSchema,
+    name: "Articulos",
+    group: "Main",
+    description: "List of the products currently sold in our shop",
+    textSearchEnabled: true,
+    // additionalColumns: [productAdditionalColumn], // Example below
+
+    permissions: ({ user, authController }) => ({
+        edit: true,
+        create: true,
+        delete: false
+    }),
+    excludedProperties: ["related_products"]
+});
+
+
+const estacionesTrabajosCollection = buildCollection<EstacionTrabajo>({
+    path: "estaciones",
+    schema: estacionTrabajoSchema,
+    name: "Estaciones de Trabajo",
+    group: "Main",
+    description: "List of the products currently sold in our shop",
+    textSearchEnabled: true,
+    // additionalColumns: [productAdditionalColumn], // Example below
+
+    
+    permissions: ({ user, authController }) => ({
+        edit: true,
+        create: true,
+        delete: false
+    }),
+    excludedProperties: ["related_products"]
+});
+
+
 
 export default function App() {
 
@@ -206,17 +505,9 @@ export default function App() {
 
         return ({
             collections: [
-                buildCollection({
-                    path: "articulos",
-                    schema: productSchema,
-                    name: "Articulos",
-                    permissions: ({authController}) => ({
-                        edit: true,
-                        create: true,
-                        // we have created the roles object in the navigation builder
-                        delete: authController.extra.roles.includes("admin")
-                    }),
-                })
+                
+                articulosCollection,
+                estacionesTrabajosCollection
             ]
         });
     };

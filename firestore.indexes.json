@@ -1,0 +1,331 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "contratos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "numeroContrato",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "publicado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "paquete",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "tipoObra",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "contratos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "paquete",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "tipoObra",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "contratos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "publicado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "paquete",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "tipoObra",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "contratos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "tipoObra",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "origenRecursos",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "device-events",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "deviceId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "deviceTime",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "estimaciones",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "numeroContrato",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "localidades",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "nombreLocalidad",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "quejas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "activado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "nombreQueja",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reportesQuejas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "correo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "estatus",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "quejaId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "subCategoriaQueja",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reportesQuejas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "quejaId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reportesQuejasTuxtepec",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "correo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "estatus",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "quejaId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "subCategoriaQueja",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reportesQuejasTuxtepec",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "correo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "estatus",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "quejaId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "subCategoriaQueja",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "localidad",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reportesQuejasTuxtepec",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "estatus",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reportesQuejasTuxtepec",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "localidad",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reportesQuejasTuxtepec",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "quejaId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reportesQuejasTuxtepec",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "quejaId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "estatus",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "localidad",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "subCategoriaQueja",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reportesQuejasTuxtepec",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "quejaTexto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reportesQuejasTuxtepec",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "quejaTexto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "estatus",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "localidad",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "urbanizaciones",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "municipio",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "nombre",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
