@@ -63,7 +63,7 @@ type EstacionTrabajo = {
         color: string;
         conexion: string;
         foto: string;
-        
+
     },
     mouse: {
         codigoInventario: string;
@@ -184,7 +184,6 @@ const productSchema = buildSchema<Articulo>({
         },
 
 
-
         foto: buildProperty({ // The `buildProperty` method is an utility function used for type checking
             title: "Foto",
             dataType: "string",
@@ -256,7 +255,7 @@ const productSchema = buildSchema<Articulo>({
 const estacionTrabajoSchema = buildSchema<EstacionTrabajo>({
     name: "Articulos",
     properties: {
-    
+
         codigo: {
             title: "Codigo",
             validation: {required: true},
@@ -325,7 +324,6 @@ const estacionTrabajoSchema = buildSchema<EstacionTrabajo>({
                 }),
             }
         },
-
 
 
         mouse: {
@@ -446,17 +444,15 @@ const estacionTrabajoSchema = buildSchema<EstacionTrabajo>({
             }
         },
 
-
-
-
         creacion: {
             title: "Creacion",
-            dataType: "timestamp"
+            dataType: "timestamp",
+            autoValue: "on_create"
+
         }
-        
+
     }
 });
-
 
 const articulosCollection = buildCollection<Articulo>({
     path: "articulos",
@@ -467,7 +463,7 @@ const articulosCollection = buildCollection<Articulo>({
     textSearchEnabled: true,
     // additionalColumns: [productAdditionalColumn], // Example below
 
-    permissions: ({ user, authController }) => ({
+    permissions: ({user, authController}) => ({
         edit: true,
         create: true,
         delete: false
@@ -485,15 +481,14 @@ const estacionesTrabajosCollection = buildCollection<EstacionTrabajo>({
     textSearchEnabled: true,
     // additionalColumns: [productAdditionalColumn], // Example below
 
-    
-    permissions: ({ user, authController }) => ({
+
+    permissions: ({user, authController}) => ({
         edit: true,
         create: true,
         delete: false
     }),
     excludedProperties: ["related_products"]
 });
-
 
 
 export default function App() {
@@ -505,7 +500,7 @@ export default function App() {
 
         return ({
             collections: [
-                
+
                 articulosCollection,
                 estacionesTrabajosCollection
             ]
