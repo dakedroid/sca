@@ -39,7 +39,8 @@ const contratoSchema = buildSchema<Contratos>({
     properties: {
         descripcion: {
             title: "Descripción",
-            dataType: "string"
+            dataType: "string",
+            disabled: true
         },
         descripcionLarga: {
             title: "Descripción Larga",
